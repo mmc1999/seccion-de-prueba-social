@@ -1,0 +1,436 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 12px;
+    background-color: white;
+}
+
+h2,
+.divOpinion p {
+    color: #502050;
+}
+
+.seccionTituloSubtitulo h2 {
+    text-align: center;
+    font-weight: 700;
+}
+
+.seccionTituloSubtitulo p {
+    text-align: center;
+    font-weight: 400;
+    line-height: 20px;
+    color: hsl(240, 6%, 50%);
+}
+
+.divOpinion {
+    background-color: #F7F2F7;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+    box-sizing: border-box;
+}
+
+.divOpinion p {
+    font-weight: 700;
+}
+
+.divCriticas {
+    box-sizing: border-box;
+    background-color: hsl(300, 43%, 22%);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 70px 90px 1fr;
+    grid-template-rows: 30px 40px 1fr;
+    grid-template-areas:
+        "left center center"
+        "left right right"
+        "bottom bottom bottom";
+    flex-direction: column;
+}
+
+.left {
+    grid-area: left;
+}
+
+.center {
+    grid-area: center;
+    align-self: flex-end;
+}
+
+.right {
+    grid-area: right;
+    align-self: flex-start;
+}
+
+.bottom {
+    grid-area: bottom;
+}
+
+.imagenPersonas {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    width: 70px;
+}
+
+.nombre {
+    color: white;
+    font-weight: 700;
+    display: block;
+    margin: 0%;
+    padding: 0%;
+}
+
+.compraVerificada {
+    color: hsl(333, 80%, 67%);
+    display: inline;
+    margin: 0%;
+    padding: 0%;
+    margin-top: 10px;
+}
+
+.textoOpinion {
+    color: white;
+    line-height: 20px;
+}
+
+
+@media (max-width:700px) {
+    body {
+        height: 100%;
+        background-image: url(../images/bg-pattern-top-mobile.svg), url(../images/bg-pattern-bottom-mobile.svg);
+        background-repeat: no-repeat, no-repeat;
+        background-size: contain, contain;
+        background-position: top -10vh right 5vw, bottom -30vh left 0vw;
+    }
+
+    .contenedor {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .seccionClasificacion {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .divOpinion {
+        width: 100%;
+        margin: 10px 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 70px;
+    }
+
+    .iconosEstrellas img {
+        margin: 5px 3px 0px 3px;
+    }
+
+    .seccionOpinion {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .divCriticas {
+        margin: 10px 0px;
+        padding: 20px;
+        display: grid;
+        grid-template-columns: 90px 90px 1fr;
+        grid-template-rows: 30px 40px 1fr;
+        grid-template-areas:
+            "left center center"
+            "left right right"
+            "bottom bottom bottom";
+        flex-direction: column;
+    }
+}
+
+.nombre {
+    font-size: 16px;
+}
+
+.compraVerificada {
+    font-size: 15px;
+}
+
+
+@media (min-width:700px) and (max-width:1000px) {
+    body {
+        height: 100vh;
+        background-image: url(../images/bg-pattern-top-desktop.svg), url(../images/bg-pattern-bottom-desktop.svg);
+        background-repeat: no-repeat, no-repeat;
+        background-size: cover, cover;
+        background-position: top 0vh right 30vw, bottom 10vh left 30vw;
+    }
+
+    .contenedor {
+        padding: 20px 20px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 300px;
+        grid-template-areas:
+            "left right"
+            "bottom bottom";
+    }
+
+    .seccionTituloSubtitulo {
+        grid-area: left;
+        text-align: justify;
+        padding-right: 10px;
+    }
+
+    .seccionTituloSubtitulo h2 {
+        font-size: 35px;
+        width: 350px;
+        text-align: justify;
+    }
+
+    .seccionTituloSubtitulo p {
+        text-align: justify;
+        width: 350px;
+        box-sizing: border-box;
+    }
+
+    .seccionClasificacion {
+        grid-area: right;
+        display: grid;
+        grid-template-columns: 20px 20px 20px 300px;
+        grid-template-rows: 70px 70px 70px;
+        grid-template-areas:
+            "top top    top    top"
+            ".   center center center"
+            ".   .      bottom bottom"
+        ;
+        margin: 0px 0px;
+    }
+
+    .divOpinion {
+        width: 310px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 20px 0px;
+        height: 50px;
+    }
+
+    .divOpinion1 {
+        grid-area: top;
+    }
+
+    .divOpinion2 {
+        grid-area: center;
+    }
+
+    .divOpinion3 {
+        grid-area: bottom;
+    }
+
+    .iconosEstrellas {
+        margin: 0px 25px;
+    }
+
+    .divOpinion p {
+        margin: 0%;
+        padding: 0%;
+    }
+
+    .seccionOpinion {
+        grid-area: bottom;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 20px 20px 310px 20px 20px;
+        grid-template-areas:
+            "left .      .    "
+            "left center .    "
+            "left center right"
+            ".    center right"
+            ".    .      right"
+        ;
+    }
+
+    .imagenPersonas {
+        width: 50px;
+    }
+
+    .nombre {
+        align-self: center;
+    }
+
+    .compraVerificada {
+        align-self: flex-start;
+    }
+
+    .divCriticas {
+        width: auto;
+        box-sizing: border-box;
+        margin: 10px 10px 10px 0px;
+        height: auto;
+    }
+
+    .divCriticas1 {
+        grid-area: left;
+    }
+
+    .divCriticas2 {
+        grid-area: center;
+    }
+
+    .divCriticas3 {
+        grid-area: right;
+    }
+}
+@media (min-width:1000px) {
+    body {
+        height: 100vh;
+        background-image: url(../images/bg-pattern-top-desktop.svg), url(../images/bg-pattern-bottom-desktop.svg);
+        background-repeat: no-repeat, no-repeat;
+        background-size: cover, cover;
+        background-position: top 0vh right 50vw, bottom -10vh left 30vw;
+    }
+
+    .contenedor {
+        padding: 30px 80px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 300px;
+        grid-template-areas:
+            "left right"
+            "bottom bottom";
+    }
+
+    .seccionTituloSubtitulo {
+        grid-area: left;
+        text-align: justify;
+        padding-right: 10px;
+    }
+
+    .seccionTituloSubtitulo h2 {
+        font-size: 40px;
+        width: 350px;
+        text-align: justify;
+    }
+
+    .seccionTituloSubtitulo p {
+        text-align: justify;
+        width: 350px;
+        box-sizing: border-box;
+    }
+
+    .seccionClasificacion {
+        grid-area: right;
+        display: grid;
+        grid-template-columns: 20px 20px 20px 300px;
+        grid-template-rows: 70px 70px 70px;
+        grid-template-areas:
+            "top top    top    top"
+            ".   center center center"
+            ".   .      bottom bottom"
+        ;
+        margin: 0px 0px;
+    }
+
+    .divOpinion {
+        width: 450px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 20px 0px;
+        height: 50px;
+    }
+
+    .divOpinion1 {
+        grid-area: top;
+    }
+
+    .divOpinion2 {
+        grid-area: center;
+    }
+
+    .divOpinion3 {
+        grid-area: bottom;
+    }
+
+    .iconosEstrellas {
+        margin: 0px 50px;
+    }
+
+    .divOpinion p {
+        margin: 0%;
+        padding: 0%;
+    }
+
+    .seccionOpinion {
+        grid-area: bottom;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 20px 20px 310px 20px 20px;
+        grid-template-areas:
+            "left .      .    "
+            "left center .    "
+            "left center right"
+            ".    center right"
+            ".    .      right"
+        ;
+    }
+
+    .imagenPersonas {
+        width: 50px;
+    }
+
+    .nombre {
+        align-self: center;
+    }
+
+    .compraVerificada {
+        align-self: flex-start;
+    }
+
+    .divCriticas {
+        width: auto;
+        box-sizing: border-box;
+        margin: 10px 10px 10px 0px;
+        height: 270px;
+    }
+
+    .divCriticas1 {
+        grid-area: left;
+    }
+
+    .divCriticas2 {
+        grid-area: center;
+    }
+
+    .divCriticas3 {
+        grid-area: right;
+    }
+}
